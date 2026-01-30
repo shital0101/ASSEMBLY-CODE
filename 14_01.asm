@@ -1,7 +1,7 @@
 section .data
 	a dd 10
 	b dd 20
-	msg db "Addition of %d and %d is %d",10,0
+	msg db "Addition is %d",10,0
 section .bss
 	c resd 1
 section .text
@@ -15,9 +15,7 @@ main:
 	mov dword[c],eax
 
 	push dword[c]
-	push dword[b]
-	push dword[a]
 	push msg
 	call printf
-	add esp,16
+	add esp,8
 	ret
